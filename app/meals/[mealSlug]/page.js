@@ -2,6 +2,15 @@ import styles from "./page.module.css";
 import { getMealBySlug } from "@/api/meals";
 import Image from "next/image";
 
+export async function generateMetadata({ params }) {
+  const meal = getMealBySlug(params.mealSlug);
+
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
+
 export default function MealItemsPage({ params }) {
   const meal = getMealBySlug(params.mealSlug);
 
