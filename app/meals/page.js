@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import styles from "./page.module.css";
 import MealsGrid from "@/components/meals/meals-grid";
-import getMeals from "@/api/meals";
+import { getMeals } from "@/api/meals";
 
 async function Meals() {
   const meals = await getMeals();
